@@ -1,0 +1,363 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-sacred-gold: #5A6B4E;
+  --color-sacred-gold-light: #A3B18A;
+  --color-sacred-bronze: #EAE1D1;
+  --color-sacred-slate: #FDFBF7;
+  --color-sacred-charcoal: #EAE1D1;
+  --color-sacred-paper: #2D2926;
+}
+
+/* Custom gorgeous scrollbar for clean bible layout reading */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 107, 78, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 107, 78, 0.4);
+}
+
+.bible-highlight-yellow {
+  background-color: rgba(234, 225, 209, 0.6);
+  border-bottom: 2px dashed rgba(90, 107, 78, 0.6);
+}
+
+.bible-highlight-green {
+  background-color: rgba(163, 177, 138, 0.3);
+  border-bottom: 2px dashed rgba(90, 107, 78, 0.6);
+}
+
+.bible-highlight-blue {
+  background-color: rgba(191, 219, 254, 0.5);
+  border-bottom: 2px dashed rgba(59, 130, 246, 0.6);
+}
+
+.bible-highlight-pink {
+  background-color: rgba(240, 171, 252, 0.5);
+  border-bottom: 2px dashed rgba(236, 72, 153, 0.6);
+}
+
+.bible-highlight-purple {
+  background-color: rgba(233, 213, 255, 0.5);
+  border-bottom: 2px dashed rgba(168, 85, 247, 0.6);
+}
+
+/* breathing sphere pulse keyframe animation with sage and gold accents */
+@keyframes breathingPulse {
+  0% {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 10px rgba(163, 177, 138, 0.2));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 35px rgba(90, 107, 78, 0.4));
+  }
+  100% {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 10px rgba(163, 177, 138, 0.2));
+  }
+}
+
+.breathing-sphere {
+  animation: breathingPulse 6s ease-in-out infinite;
+}
+
+/* NATURAL TONES CORE DESIGN THEME OVERRIDES */
+:root {
+  --bg-cream: #FDFBF7;
+  --accent-olive: #5A6B4E;
+  --accent-sage: #A3B18A;
+  --text-ink: #2D2926;
+  --soft-clay: #EAE1D1;
+  --alert-terracotta: #C06C53;
+  --card-white: #FFFFFF;
+}
+
+/* Root level reset & base text defaults */
+body {
+  background-color: var(--bg-cream) !important;
+  color: var(--text-ink) !important;
+  font-family: "Inter", sans-serif;
+}
+
+/* Override container div structures from dark-gray to warm cream */
+.min-h-screen,
+body,
+html,
+#root {
+  background-color: var(--bg-cream) !important;
+  color: var(--text-ink) !important;
+}
+
+/* For all panels, cards, dashboards */
+.bg-gray-900,
+.bg-gray-950,
+.bg-gray-905,
+.bg-gray-900\/60,
+.bg-gray-905\/70,
+.bg-gray-900\/50,
+.bg-slate-905,
+.bg-\[\#0f1216\],
+.bg-\[\#1d140b\],
+.bg-\[\#0b131c\],
+.bg-\[\#04080e\],
+.bg-\[\#0d1117\],
+.bg-\[\#141b22\],
+.bg-\[\#0b0e11\],
+.bg-\[\#121c15\],
+.bg-\[\#111a13\],
+.bg-black\/30,
+.bg-black\/40,
+.bg-black\/45,
+.bg-black\/50,
+.bg-black\/60,
+.bg-black\/65,
+.bg-[#000000]\/30,
+.bg-yellow-950\/20,
+.bg-green-950\/40,
+.bg-red-950\/10,
+.bg-gradient-to-b.from-\[\#141b22\],
+.bg-gradient-to-r.from-red-950\/20,
+.bg-gradient-to-br.from-\[\#12161b\] {
+  background-color: var(--card-white) !important;
+  background-image: none !important;
+  color: var(--text-ink) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: var(--soft-clay) !important;
+  box-shadow: 0 4px 12px rgba(45, 41, 38, 0.04) !important;
+}
+
+/* Explicit input elements styling */
+input[type="text"],
+input[type="search"],
+input[type="date"],
+select,
+textarea {
+  background-color: #FFFFFF !important;
+  color: var(--text-ink) !important;
+  border: 1px solid var(--soft-clay) !important;
+  border-radius: 8px !important;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: rgba(45, 41, 38, 0.4) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-olive) !important;
+  outline: none !important;
+  box-ring: 2px var(--accent-sage) !important;
+}
+
+/* Headers background spacing */
+.bg-\[\#151B22\] {
+  background-color: var(--soft-clay) !important;
+  border-color: var(--soft-clay) !important;
+  color: var(--accent-olive) !important;
+}
+
+.bg-\[\#151B22\] p {
+  color: var(--accent-olive) !important;
+}
+
+/* Serif headers typography class */
+.font-serif,
+h1,
+h2,
+h3,
+h4,
+.serif {
+  font-family: "Libre Baskerville", Georgia, serif !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-weight: 900 !important;
+}
+
+/* Standard grey/dark text descriptions to readable soft charcoal ink */
+.text-gray-400,
+.text-gray-500,
+.text-gray-600,
+.text-gray-300,
+.text-amber-100\/50,
+.text-blue-300\/50,
+.text-[#FDFCFA],
+.text-amber-100\/50 {
+  color: rgba(45, 41, 38, 0.75) !important;
+}
+
+/* Secondary meta descriptions */
+.text-gray-500,
+.text-gray-600,
+.text-[9px].text-gray-500 {
+  color: rgba(45, 41, 38, 0.6) !important;
+}
+
+/* Keep title absolute white in header buttons etc */
+.text-white {
+  color: var(--text-ink) !important;
+}
+
+/* Accent golden colors mapped to olive */
+.text-\[\#D4AF37\],
+.text-amber-400,
+.text-amber-500,
+.text-yellow-500 {
+  color: var(--accent-olive) !important;
+}
+
+/* Accent golden buttons or background banners scaled to sage or olive */
+.bg-\[\#D4AF37\],
+.bg-amber-400,
+.bg-amber-500 {
+  background-color: var(--accent-olive) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent-olive) !important;
+}
+
+.bg-\[\#D4AF37\]:hover,
+.bg-amber-450:hover,
+.bg-amber-500:hover {
+  background-color: var(--accent-sage) !important;
+  color: #FFFFFF !important;
+}
+
+/* Gold border attributes mapped to sage/olive */
+.border-\[\#D4AF37\],
+.border-amber-900\/30,
+.border-amber-900\/60,
+.border-amber-950,
+.border-amber-500\/40,
+.border-gray-850,
+.border-gray-900,
+.border-[#D4AF37]\/35,
+.border-[#D4AF37]\/40,
+.border-[#D4AF37]\/20 {
+  border-color: var(--soft-clay) !important;
+}
+
+/* Badges showing unlocked and active elements */
+.inline-flex.bg-\[\#D4AF37\]\/10,
+.bg-\[\#D4AF37\]\/10,
+.bg-\[\#D4AF37\]\/15,
+.bg-amber-950\/20,
+.bg-green-950\/20 {
+  background-color: rgba(163, 177, 138, 0.15) !important;
+  color: var(--accent-olive) !important;
+  border-color: rgba(90, 107, 78, 0.25) !important;
+}
+
+/* Highlighted background lists / selection lists */
+.bg-amber-100 {
+  background-color: var(--accent-sage) !important;
+  color: #FFFFFF !important;
+}
+
+/* Default state buttons or other navigational tabs */
+nav button,
+a.sidebar-btn {
+  background-color: var(--soft-clay) !important;
+  color: var(--text-ink) !important;
+  border-color: var(--soft-clay) !important;
+}
+
+nav button:hover,
+a.sidebar-btn:hover {
+  background-color: var(--accent-sage) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent-sage) !important;
+}
+
+/* Active navigation state */
+nav button.bg-amber-100 {
+  background-color: var(--accent-olive) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent-olive) !important;
+}
+
+/* Glass panel background logic */
+.glass {
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid var(--soft-clay) !important;
+}
+
+/* Emergency or Crisis SOS components => Terracotta red */
+button.bg-red-600,
+button.bg-red-900,
+button.bg-red-950,
+.bg-red-600,
+.bg-red-950\/20,
+.bg-[#1a0a0d] {
+  background-color: var(--alert-terracotta) !important;
+  color: #FFFFFF !important;
+  border-color: var(--alert-terracotta) !important;
+}
+
+button.bg-red-600:hover {
+  background-color: #A95D47 !important;
+}
+
+.text-red-500,
+.text-red-400 {
+  color: var(--alert-terracotta) !important;
+}
+
+.border-red-500\/30,
+.border-red-900\/20,
+.border-red-900\/30 {
+  border-color: var(--alert-terracotta) !important;
+}
+
+/* Success checklist or unlocked styles */
+.text-green-400,
+.text-green-500 {
+  color: var(--accent-olive) !important;
+}
+
+.bg-green-950\/20,
+.bg-green-950\/40 {
+  background-color: rgba(163, 177, 138, 0.15) !important;
+  color: var(--accent-olive) !important;
+  border-color: rgba(90, 107, 78, 0.25) !important;
+}
+
+/* Footer layout rules */
+footer {
+  background-color: var(--soft-clay) !important;
+  border-top: 1px solid var(--soft-clay) !important;
+  color: var(--text-ink) !important;
+}
+
+footer p {
+  color: rgba(45, 41, 38, 0.7) !important;
+}
+
+footer span {
+  color: var(--accent-olive) !important;
+}
+

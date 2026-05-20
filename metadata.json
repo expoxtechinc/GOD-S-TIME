@@ -1,0 +1,6 @@
+{
+  "name": "God's Time",
+  "description": "Premium Full Bible App featuring Scripture Study, 50,000+ Motivational Quotes, Spiritual Habits, Temptation SOS Recovery, and Devotions. Created by Akin S. Sokpah, Monrovia, Liberia.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
